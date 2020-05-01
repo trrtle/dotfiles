@@ -37,5 +37,3 @@ set textwidth=79
 set autoindent
 set fileformat=unix
 
-
-
