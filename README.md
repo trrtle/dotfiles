@@ -8,4 +8,5 @@
 5. Open vim and run :PlugInstall - this will install all the plugins from the .vimrc
 6. Install YouCompleteMe - go to ~/.vim/pluggid/YouCompleteme and run python install.py
 
-###### *and ascend.*
+###### Python users
+if you use pyton virtual environments put the .ycm_extra_conf.py in your project directory with the path to the interperter
