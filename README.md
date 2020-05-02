@@ -9,4 +9,4 @@
 6. Install YouCompleteMe - go to ~/.vim/pluggid/YouCompleteme and run python install.py
 
 ###### Python users
-if you use pyton virtual environments put the .ycm_extra_conf.py in your project directory with the path to the interperter
+if you use pyton virtual environments put the .ycm_extra_conf.py in your project root with the path to the interperter
