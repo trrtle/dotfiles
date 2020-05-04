@@ -1,11 +1,13 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/indentpython.vim' 
 Plug 'vim-utils/vim-man'
 call plug#end()
@@ -35,26 +37,32 @@ set incsearch
 set encoding=utf-8
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set textwidth=79
+"set textwidth=79
 set autoindent
 set fileformat=unix
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " configuration
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <F3> :Autoformat<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>v :vsplit <CR>
+nnoremap <leader>b :split <CR>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>--
+nnoremap J 10j
+nnoremap K 10k
 
 map <leader>t :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
