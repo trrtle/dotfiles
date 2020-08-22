@@ -1,0 +1,25 @@
+{
+    "editor.minimap.enabled": true,
+    "workbench.iconTheme": "minimalistic-icons",
+    "window.zoomLevel": 0,
+    "workbench.tree.indent": 15,
+    "django.snippets.exclude": [
+    "editor.minimap.enabled",
+        "cms",
+        "wagtail"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "off",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#3b6677",
+        "editor.selectionHighlightBackground": "#3b6677",
+        "statusBar.background" : "#9E9E9E",
+        "statusBar.foreground": "#212121"
+    },
+    "explorer.confirmDelete": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.colorTheme": "Darcula",
+    "python.formatting.provider": "black"
+}
