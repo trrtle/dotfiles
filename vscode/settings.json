@@ -11,15 +11,18 @@
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "off",
     "workbench.colorCustomizations": {
-        "editor.selectionBackground": "#3b6677",
-        "editor.selectionHighlightBackground": "#3b6677",
         "statusBar.background" : "#9E9E9E",
-        "statusBar.foreground": "#212121"
+        "statusBar.foreground": "#212121",
+        "editor.selectionBackground": "#545555",
+        "editor.selectionHighlightBackground": "#7a6802"
     },
     "explorer.confirmDelete": false,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "workbench.colorTheme": "Darcula",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "explorer.compactFolders": false,
+    "editor.fontFamily": "source code pro",
+    "editor.fontWeight": "500",
 }
