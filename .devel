@@ -1,3 +1,10 @@
+#! bin/bash
+# Development settings
+#
+#
+#
+#
+
 
 # pyenv
 export PYENV_ROOT="$HOME/devel/venv/pyenv"
