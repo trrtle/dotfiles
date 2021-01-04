@@ -1,0 +1,29 @@
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+" Configuration
+set nu
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+
+" syntax highlighting
+syntax on
+colorscheme gruvbox
+set background=dark
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" PEP 8 Python
+set encoding=utf-8
+set autoindent
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set fileformat=unix
+set colorcolumn=80
+
