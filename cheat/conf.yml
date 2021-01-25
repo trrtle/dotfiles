@@ -54,22 +54,22 @@ cheatpaths:
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
   - name: python
-    path: /home/turtle/Dropbox/cheatsheets/python/cheat/
+    path: /home/turtle/Dropbox/devdocs/python/cheat/
     tags: [ python ]
     readonly: false
 
   - name: webserver
-    path: /home/turtle/Dropbox/cheatsheets/webserver/cheat/
+    path: /home/turtle/Dropbox/devdocs/webserver/cheat/
     tags: [ webserver ]
     readonly: false
     
   - name: linux
-    path: /home/turtle/Dropbox/cheatsheets/linux/cheat/
+    path: /home/turtle/Dropbox/devdocs/linux/cheat/
     tags: [ linux ]
     readonly: false
 
   - name: highbiza
-    path: /home/turtle/Dropbox/cheatsheets/highbiza/cheat/
+    path: /home/turtle/Dropbox/devdocs/highbiza/cheat/
     tags: [ highbiza ]
     readonly: false
   # While it requires no configuration here, it's also worth noting that
