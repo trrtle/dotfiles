@@ -16,12 +16,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # set new virtualenv prompt
 function virtualenv_info {
-	if [[ -n "$VIRTUAL_ENV" ]]; then
-		echo "${VIRTUAL_ENV##*/}"
-	else
-		echo "global"
-	fi
+	[[ -n "$VIRTUAL_ENV" ]] && echo "${VIRTUAL_ENV##*/}"
 }
-VENV="["$info_color"\$(virtualenv_info)"$prompt_color"]"
+VENV="\$(virtualenv_info)"
 PS1=$prompt_color'┌─'$VENV'─${debian_chroot:+($debian_chroot)──}('$info_color'\u${prompt_symbol}\h'$prompt_color')-['$info_color'\w'$prompt_color']\n'$prompt_color'└>\[\033[1;0m\]'
 
