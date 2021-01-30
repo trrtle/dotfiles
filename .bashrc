@@ -124,6 +124,3 @@ fi
 export PATH=/home/turtle/.scripts:$PATH
 
 PROMPT_DIRTRIM=3
-HOSTNAME=hostname
-CWD="${PWD##*/}"
-TITLE='$HOSTNAME:$CWD'
