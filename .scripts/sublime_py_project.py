@@ -1,4 +1,4 @@
-#! /bin/python3
+#! /usr/bin/python3
 
 import argparse
 import json
@@ -13,12 +13,6 @@ CWD = os.getcwd()
 def arguments():
     parser = argparse.ArgumentParser(
         description="Create a Sublime text python project file"
-    )
-
-    parser.add_argument(
-        "project_name",
-        action="store",
-        help="Name of the project (must be the same as virtual environment)"
     )
     parser.add_argument(
         "-p",
@@ -46,6 +40,7 @@ def arguments():
 
 
 def create_project_file(args):
+    project_name = os.path.basename(args.project)
     project = {
         "folders":
         [
@@ -55,11 +50,11 @@ def create_project_file(args):
         ],
         "settings":
         {
-            "python_interpreter": f"{args.venv_dir}{args.project_name}/bin/python"
+            "python_interpreter": f"{args.venv_dir}{project_name}/bin/python"
         }
     }
 
-    project_file = f"{args.destination}{args.project_name}.sublime-project"
+    project_file = f"{args.destination}{project_name}.sublime-project"
 
     if os.path.isfile(project_file):
         return False
@@ -72,11 +67,12 @@ def create_project_file(args):
 if __name__ == "__main__":
     args = arguments()
     file_created = create_project_file(args)
-    project_file = f"{args.destination}{args.project_name}.sublime-project"
+    project_name = os.path.basename(args.project)
+    project_file = f"{args.destination}{project_name}.sublime-project"
     if file_created:
         print(f"Creating new sublime project file at: {project_file}")
     else:
-        print(f"project already exists at: {project_file}")\
+        print(f"Opening: {project_file}")\
 
     shell_cmd = f"subl --project {project_file}"
     os.system(shell_cmd)
