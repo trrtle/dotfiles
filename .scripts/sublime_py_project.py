@@ -45,6 +45,13 @@ def arguments():
     return parser.parse_args()
 
 
+def project_file_exists():
+    project_file = f"{args.destination}{project_name}.sublime-project"
+    if os.path.isfile(project_file):
+        return True
+    return False
+
+
 def create_project_file(args):
     project_name = os.path.basename(args.virtual_env)
     project = {
@@ -62,23 +69,34 @@ def create_project_file(args):
 
     project_file = f"{args.destination}{project_name}.sublime-project"
 
-    if os.path.isfile(project_file):
-        return False
-    else:
-        with open(project_file, "w+") as file:
-            file.write(json.dumps(project, indent=4))
-        return True
+    with open(project_file, "w+") as file:
+        file.write(json.dumps(project, indent=4))
+
+
+def print_args(args):
+    print(f"Project: {args.project}")
+    print(f"Virtual_env: {args.virtual_env}")
+    print(f"Destination: {args.destination}")
 
 
 if __name__ == "__main__":
-    args = arguments()    
-    file_created = create_project_file(args)
+    args = arguments()
     project_name = os.path.basename(args.virtual_env)
     project_file = f"{args.destination}{project_name}.sublime-project"
-    if file_created:
-        print(f"Creating new sublime project file at: {project_file}")
-    else:
-        print(f"Opening: {project_file}")\
-
     shell_cmd = f"subl --project {project_file}"
-    os.system(shell_cmd)
+    if project_file_exists():
+        print(f"Opening: {project_file}")
+        os.system(shell_cmd)
+    else:
+        print_args(args)
+        user_input = input("Sublime Project does not exist, do you want to create a new one? \n[y/N]: ")
+        if user_input.lower().strip() == "y":
+            create_project_file(args)
+            print(f"Creating new sublime project file at: {project_file}")
+            os.system(shell_cmd)
+        else:
+            print("Cya")
+
+
+    
+    
