@@ -17,7 +17,8 @@ let mapleader = " "
 syntax on
 colorscheme gruvbox
 set background=dark
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=100
+highlight ColorColumn ctermbg=lightgrey
 
 " PEP 8 Python
 set encoding=utf-8
@@ -25,5 +26,4 @@ set autoindent
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set fileformat=unix
-set colorcolumn=80
 
