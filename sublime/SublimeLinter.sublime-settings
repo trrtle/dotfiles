@@ -1,0 +1,8 @@
+// SublimeLinter Settings - User
+{
+    "styles":[{
+        "mark_style": "squiggly_underline"
+    }
+    ]
+
+}
