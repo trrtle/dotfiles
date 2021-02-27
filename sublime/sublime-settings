@@ -1,0 +1,19 @@
+{
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
+	"font_face": "Source Code Pro",
+
+	// font size depends on system on mac i use 13 on desktop i use 11
+	"font_size": 13,
+	"hot_exit": false,
+	"remember_open_files": false,
+	"scroll_past_end": true,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"show_encoding": true,
+	 "preview_on_click": false,
+	 
+	// shell_environment is mac only
+	"shell_environment": false,
+	"show_full_path": false,
+
+}
