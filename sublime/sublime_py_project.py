@@ -4,16 +4,18 @@ import argparse
 import json
 import os
 
-HOME = os.path.expanduser("~")
-DEFAULT_SUBLIME_PROJECT_DIR = f"{HOME}/devel/projects/sublime/"
-DEFAULT_PROJECT_DIR = f"{HOME}/devel/projects/highbiza/"
-
 try:
     VIRTUAL_ENV = os.environ["VIRTUAL_ENV"]
 except KeyError:
     raise Exception("You need a virtual environment to run this script")
 
-PROJECT_NAME = os.path.basename(VIRTUAL_ENV)
+
+HOME = os.path.expanduser("~")
+DEFAULT_SUBLIME_PROJECT_DIR = f"{HOME}/projects/sublime/"
+DEFAULT_PROJECT_DIR = f"{HOME}/projects/highbiza/"
+
+space = argparse.Namespace()
+space.PROJECT_NAME = os.path.basename(VIRTUAL_ENV)
 
 
 def arguments():
@@ -24,7 +26,7 @@ def arguments():
         "-p",
         "--project",
         nargs="?",
-        default=f"{DEFAULT_PROJECT_DIR}{PROJECT_NAME}",
+        default=f"{DEFAULT_PROJECT_DIR}{space.PROJECT_NAME}",
         help="Directory where the project resides"
     )
     parser.add_argument(
@@ -46,30 +48,26 @@ def arguments():
 
 
 def project_file_exists():
-    project_file = f"{args.destination}{project_name}.sublime-project"
-    if os.path.isfile(project_file):
+    if os.path.isfile(space.PROJECT_FILE):
         return True
     return False
 
 
-def create_project_file(args):
-    project_name = os.path.basename(args.virtual_env)
+def create_project_file():
     project = {
         "folders":
         [
             {
-                "path": args.project
+                "path": space.args.project
             }
         ],
         "settings":
         {
-            "python_interpreter": f"{args.virtual_env}/bin/python"
+            "python_interpreter": f"{space.args.virtual_env}/bin/python"
         }
     }
 
-    project_file = f"{args.destination}{project_name}.sublime-project"
-
-    with open(project_file, "w+") as file:
+    with open(space.PROJECT_FILE, "w+") as file:
         file.write(json.dumps(project, indent=4))
 
 
@@ -80,23 +78,18 @@ def print_args(args):
 
 
 if __name__ == "__main__":
-    args = arguments()
-    project_name = os.path.basename(args.virtual_env)
-    project_file = f"{args.destination}{project_name}.sublime-project"
-    shell_cmd = f"subl --project {project_file}"
+    space.args = arguments()
+    space.PROJECT_FILE = f"{space.args.destination}{space.PROJECT_NAME}.sublime-project"
+    shell_cmd = f"subl --project {space.PROJECT_FILE}"
     if project_file_exists():
-        print(f"Opening: {project_file}")
+        print(f"Opening: {space.PROJECT_FILE}")
         os.system(shell_cmd)
     else:
-        print_args(args)
+        print_args(space.args)
         user_input = input("Sublime Project does not exist, do you want to create a new one? \n[y/N]: ")
         if user_input.lower().strip() == "y":
-            create_project_file(args)
-            print(f"Creating new sublime project file at: {project_file}")
+            create_project_file()
+            print(f"Creating new sublime project file at: {space.PROJECT_FILE}")
             os.system(shell_cmd)
         else:
             print("Cya")
-
-
-    
-    
