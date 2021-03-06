@@ -71,10 +71,10 @@ def create_project_file():
         file.write(json.dumps(project, indent=4))
 
 
-def print_args(args):
-    print(f"Project: {args.project}")
-    print(f"Virtual_env: {args.virtual_env}")
-    print(f"Destination: {args.destination}")
+def print_args():
+    print(f"Project: {space.args.project}")
+    print(f"Virtual_env: {space.args.virtual_env}")
+    print(f"Destination: {space.args.destination}")
 
 
 if __name__ == "__main__":
@@ -85,7 +85,7 @@ if __name__ == "__main__":
         print(f"Opening: {space.PROJECT_FILE}")
         os.system(shell_cmd)
     else:
-        print_args(space.args)
+        print_args()
         user_input = input("Sublime Project does not exist, do you want to create a new one? \n[y/N]: ")
         if user_input.lower().strip() == "y":
             create_project_file()

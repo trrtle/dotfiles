@@ -8,5 +8,10 @@
         "jshint":{
             "excludes": ["*.html"]
         }
-    }
+    },
+    "paths": {
+        "linux": [],
+        "osx": [],
+        "windows": []
+    },
 }
