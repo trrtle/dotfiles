@@ -1,0 +1,14 @@
+{
+    "anaconda_linter_mark_style": "stippled_underline",
+    "anaconda_linting_behaviour": "load-save",
+    "anaconda_linting": false,
+    "use_pylint": false,
+    "pep8": false,
+    "pep8_ignore":
+    [
+        "E309",
+        "E501",
+        "w503"
+    ],
+
+}
