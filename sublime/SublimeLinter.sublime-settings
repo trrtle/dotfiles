@@ -3,6 +3,15 @@
     "styles":[{
         "mark_style": "squiggly_underline"
     }
-    ]
-
+    ],
+    "linters":{
+        "jshint":{
+            "excludes": ["*.html"]
+        }
+    },
+    "paths": {
+        "linux": [],
+        "osx": [],
+        "windows": []
+    },
 }
