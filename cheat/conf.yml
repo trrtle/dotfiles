@@ -1,4 +1,3 @@
----
 # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
 editor: vim
 
@@ -58,9 +57,9 @@ cheatpaths:
     tags: [ python ]
     readonly: false
 
-  - name: webserver
-    path: /home/turtle/Dropbox/devdocs/webserver/cheat/
-    tags: [ webserver ]
+  - name: devops
+    path: /home/turtle/Dropbox/devdocs/devops/cheat/
+    tags: [ devops ]
     readonly: false
     
   - name: linux
@@ -72,7 +71,23 @@ cheatpaths:
     path: /home/turtle/Dropbox/devdocs/highbiza/cheat/
     tags: [ highbiza ]
     readonly: false
-  # While it requires no configuration here, it's also worth noting that
+    
+  - name: elasticsearch
+    path: /home/turtle/Dropbox/devdocs/elasticsearch/cheat/
+    tags: [ elasticsearch ]
+    readonly: false
+
+  - name: git
+    path: /home/turtle/Dropbox/devdocs/git/cheat/
+    tags: [ git ]
+    readonly: false
+
+  - name: db
+    path: /home/turtle/Dropbox/devdocs/db/cheat/
+    tags: [ db ]
+    readonly: false
+  
+# While it requires no configuration here, it's also worth noting that
   # 'cheat' will automatically append directories named '.cheat' within the
   # current working directory to the 'cheatpath'. This can be very useful if
   # you'd like to closely associate cheatsheets with, for example, a directory
