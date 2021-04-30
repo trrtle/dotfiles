@@ -11,3 +11,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.virtualenvs/projects
 source $HOME/.pyenv/versions/3.6.10/bin/virtualenvwrapper.sh 
 
+
+# Vagrant
+export VAGRANT_DEFAULT_PROVIDER = "virtualbox"
