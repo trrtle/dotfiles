@@ -1,9 +1,9 @@
 {
     "anaconda_linter_mark_style": "stippled_underline",
     "anaconda_linting_behaviour": "load-save",
-    "anaconda_linting": false,
+    "anaconda_linting": true,
     "use_pylint": false,
-    "pep8": false,
+    "pep8": true,
     "pep8_ignore":
     [
         "E309",
