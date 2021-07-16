@@ -3,25 +3,34 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme gruvbox
-set bg=dark
+
+" indent
+set backspace=indent,eol,start
+set autoindent 
+set smartindent
 filetype plugin indent on
+
+
+" backup
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
+set hidden
+
+" search
+set path=.,**
+set incsearch
+
+" theme
 syntax on
 set relativenumber
 set number
-set backspace=indent,eol,start
-set noswapfile
-set hidden
-set path=.,**
+colorscheme gruvbox
+set bg=dark
 set splitbelow
-set termwinsize=10x0
-
-"tabbing:
-set shiftwidth=4
-set tabstop=4 
-set softtabstop=4 
-set autoindent 
-set smartindent
-
+set cc=100
+set nowrap
+set hlsearch
 "env variables:
 let $RC="$HOME/.vim/vimrc"
+
